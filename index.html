@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Person Management</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+
+                <img src="Person.jpeg" alt="Person Management" style="height: 50px;">
+              
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#blogs" style="color:rgb(255, 102, 0)">BLOGS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#forms" class="nav-link active">Form</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#contact" class="nav-link active">Contact Us</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div id="blogs" class = "blog-section">
+        <h1 style="padding: 15px;">BLOGS</h1>
+        <button onclick="btnClickHandeler()">Click Me</button>
+
+        <table class="table table-light table-striped">
+            <thead >
+                <tr>
+                    <th scope="col">First</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            <tbody id="test">
+    
+            </tbody>
+        </table>
+        <div>
+            <tr id="container">
+                <td>Fetch Data</td>
+            </tr>
+
+        </div>
+
+    </div>
+    <div id="forms" class="form-section" ><!--style="background-color: rgba(227, 172, 233, 0.763);"-->
+        <h1 style="padding: 2vh;">Forms</h1>
+        <form name = "myform" onsubmit="return validateForm()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name = "fname" class="form-control" id="name">
+            </div>
+            
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name = "uname" class="form-control" id="username">
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name = "email" class="form-control" id="email">
+            </div>
+            
+            <div class="mb-3 address">
+                <h5>Address : </h5>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="street" class="form-label">Street</label>
+                            <input type="text" name = "street" class="form-control" id="street">
+                        </td>
+                        <td>    
+                            <label for="suite" class="form-label">Suite</label>
+                            <input type="text" name = "suite" class="form-control" id="suite">
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" name = "city" class="form-control" id="city">
+                        </td>
+                        <td>    
+                            <label for="zipcode" class="form-label">Zip Code</label>
+                            <input type="text" name = "zipcode" class="form-control" id="zipcode">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <br>
+                            <h6>Geo : </h6> 
+                            <label for="lat" class="form-label">Lat</label>
+                            <input type="number" name = "lat" class="form-control" id="lat" step=".0001">
+                        </td>
+                        <td>    
+                            <br>
+                            <br>
+                            <label for="lng" class="form-label">Long</label>
+                            <input type="number" name = "long" class="form-control" id="lng" step=".0001">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="mb-3">
+                <label for="clientphone" class="form-label">Phone</label>
+                <input type="phone" name = "phone" class="form-control" id="clientphone">
+            </div>
+
+            <div class="mb-3">
+                <label for="website" class="form-label">Website</label>
+                <input type="url" name = "website" class="form-control" id="website">
+            </div>
+
+            <div class="mb-3 address">
+                <h5>Company : </h5>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name = "cname" class="form-control" id="cname">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>    
+                                <label for="catchPhrase" class="form-label">Catch Phrase</label>
+                                <input type="text" name = "catchPhrase" class="form-control" id="catchPhrase">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>    
+                                <label for="bs" class="form-label">BS</label>
+                                <input type="text" name = "bs" class="form-control" id="bs">
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+              
+            <div class="mb-3 " id = "form-check">
+              <input type="checkbox" name = "check" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1"> I here by declare that all information provided by me is correct</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class = "bg-primary bg-4 footer-div" id="contact">
+        <div class = "footer-text">
+            <div class="footer-h">
+                <h1>Contact Us</h1> 
+                <br>
+                <p>
+                    Copyright ©️ 2022 Kajal Bansal
+                </p>
+                <p>All Rights Reserved</p>
+            </div>
+            <div class="details">
+                <p> Kajal Bansal</p>
+                <p>Phone : 8427977059</p>
+                <p>Email : kajal0351.be20@chitkara.edu.in</p>
+                <p>Address :4/11 vihar nagar,banur</p>
+            </div>
+            <div class="qualification-details">
+                <p style="text-align: center;">3rd Year CSE Student</p>
+                <p style="text-align: center;">Developer, Student, Coder</p>
+                <p style="text-align: center;">Pursuing CSE From Chitkara University</p>
+                <p style="text-align: center;">banur, Punjab</p>
+            </div>
+        </div>   
+</div>
+<script src="/main.js"></script>
+</body>
+</html>
